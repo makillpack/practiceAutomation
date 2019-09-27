@@ -1,16 +1,4 @@
 var employeePage
-var employeeName = {
-    e1: "Bernice Ortiz",
-    e2: "Marnie Barnett",
-    e3: "Phillip Weaver",
-    e4: "Teresa Osborne",
-    e5: "Dollie Berry",
-    e6: "Harriett Williamson",
-    e7: "Ruby Estrada",
-    e8: "Lou White",
-    e9: "Eve Sparks",
-    e10: "Lois Brewer"
-};
 module.exports = {
     beforeEach: browser => {
         employeePage = browser.page.employee()
@@ -20,10 +8,10 @@ module.exports = {
         employeePage
             .click('@employeeLink')
             .verify.containsText('@resultEmployee', employeeName.e1)
-      //      .verify.visible('//span[@name="employeeID"]')
+            .verify.visible('@employeeID')
     },
     // 'Edit fields': browser => {
-    //     employeePage
+    //      employeePage
     //         .click('@employeeLink')
     //         .clearValue('//input[@name="nameEntry"]')
     //         .setValue('//input[@name="nameEntry"]')
